@@ -1,6 +1,18 @@
 #!/usr/bin/env python3
 import sys
 
+def keymap(x):
+	if type(x) is str:
+		if x == ' ':
+			return 'ad'
+		if x == '/':
+			return 'am'
+		if x == '_':
+			return 'an'
+		return 'n' + x
+	if type(x) in int:
+		return 'd' + str(x)
+
 data = []
 result = []
 idx = []
