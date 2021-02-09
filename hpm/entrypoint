@@ -2,6 +2,7 @@
 import sys
 
 def keymap(x):
+	x = x[0]
 	if type(x) is str:
 		if x == ' ':
 			return 'ad'
@@ -10,8 +11,11 @@ def keymap(x):
 		if x == '_':
 			return 'an'
 		return 'n' + x
-	if type(x) in int:
-		return 'd' + str(x)
+	if type(x) is int:
+		# huge number is still treated like string
+		return 'd' + str(x).zfill(10)
+	print(x, type(x), "cannot be handled")
+	sys.exit(1)
 
 data = []
 result = []
@@ -39,18 +43,18 @@ while not finish:
 			elif data[ind][idx[ind]].isnumeric():
 				tmpnum = 0
 				while data[ind][idx[ind]].isnumeric():
+					tmpnum *= 10
 					tmpnum += int(data[ind][idx[ind]])
 					idx[ind] += 1
 					if len(data[ind]) <= idx[ind]:
 						break
-					tmpnum *= 10
 				keypair.setdefault(tmpnum, [])
 				keypair[tmpnum].append(ind)
 			else:
 				keypair.setdefault(data[ind][idx[ind]], [])
 				keypair[data[ind][idx[ind]]].append(ind)
 				idx[ind] += 1
-		for key, value in sorted(keypair.items(), key = lambda x: str(x)):
+		for key, value in sorted(keypair.items(), key = lambda x: keymap(x)):
 			new_result.append(value)
 	result = new_result
 
