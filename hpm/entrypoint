@@ -5,11 +5,11 @@ def keymap(x):
 	x = x[0]
 	if type(x) is str:
 		if x == ' ':
-			return 'ad'
+			return 'sd'
 		if x == '/':
-			return 'am'
+			return 'sm'
 		if x == '_':
-			return 'an'
+			return 'sn'
 		return 'n' + x
 	if type(x) is int:
 		# huge number is still treated like string
@@ -40,9 +40,9 @@ while not finish:
 		for ind in block:
 			if len(data[ind]) <= idx[ind]:
 				new_result.append([ind])
-			elif data[ind][idx[ind]].isnumeric():
+			elif data[ind][idx[ind]].isdecimal():
 				tmpnum = 0
-				while data[ind][idx[ind]].isnumeric():
+				while data[ind][idx[ind]].isdecimal():
 					tmpnum *= 10
 					tmpnum += int(data[ind][idx[ind]])
 					idx[ind] += 1
