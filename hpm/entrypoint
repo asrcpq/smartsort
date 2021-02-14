@@ -5,11 +5,11 @@ def keymap(x):
 	x = x[0]
 	if type(x) is str:
 		if x == ' ':
-			return 'sd'
+			return 'bd'
 		if x == '/':
-			return 'sm'
+			return 'bm'
 		if x == '_':
-			return 'sn'
+			return 'bn'
 		return 'n' + x
 	if type(x) is int:
 		# huge number is still treated like string
