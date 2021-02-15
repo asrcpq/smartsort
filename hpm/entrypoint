@@ -8,8 +8,10 @@ def keymap(x):
 			return 'bd'
 		if x == '/':
 			return 'bm'
+		if x == '.':
+			return 'bo'
 		if x == '_':
-			return 'bn'
+			return 'bs'
 		return 'n' + x
 	if type(x) is int:
 		# huge number is still treated like string

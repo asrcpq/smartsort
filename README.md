@@ -4,10 +4,15 @@
 
 ```
 foo
+foo bar
 foo/bar
 foo/bar
 foo/bar2
 foo/bar123
+foo.bar
+foo_bar
+foo_bar/bar
+foo_bar.foo/bar
 foo1
 foo1/bar
 foo1_
