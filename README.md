@@ -1,9 +1,12 @@
 # smartsort
 
-* current order:
+* current order:(currently multiple spaces are not properly handled)
 
 ```
 foo
+foo  bar
+foo  foo
+foo foo
 foo bar
 foo/bar
 foo/bar
